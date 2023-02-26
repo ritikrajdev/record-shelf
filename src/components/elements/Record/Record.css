@@ -1,0 +1,52 @@
+.record {
+  --height: 300px;
+
+  width: 300px;
+  height: var(--height);
+  position: relative;
+  background-color: var(--dark-gray);
+  border-radius: 8px;
+  box-shadow: 4px 4px 8px #00000020;
+  padding: 16px;
+}
+
+.record:nth-child(2n - 1) {
+  background-color: var(--light-gray);
+}
+
+.record-img-container {
+  height: 75%;
+  position: relative;
+  text-align: center;
+}
+
+.record-img {
+  height: calc(var(--height) * 0.75 - 1rem);
+  box-sizing: border-box;
+  margin: 0.5rem;
+  border-radius: 50%;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.record-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.record-info > div {
+  max-width: calc(100% - 4rem);
+}
+
+.record-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  height: 1.3rem;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 200;
+}
