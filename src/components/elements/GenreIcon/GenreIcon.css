@@ -1,0 +1,32 @@
+.genre-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.genre-icon img {
+  width: 150px;
+  height: 150px;
+}
+
+.genre-icon > div {
+  transform: translateX(-5rem);
+}
+
+@media screen and (max-width: 350px) {
+  .genre-icon img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .genre-icon > div {
+    transform: translateX(-3rem);
+  }
+
+  .genre-icon button {
+    width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+  }
+}
