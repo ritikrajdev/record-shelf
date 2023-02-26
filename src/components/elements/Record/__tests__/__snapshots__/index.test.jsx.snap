@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Record should render correctly with gray heart when not liked 1`] = `
+<DocumentFragment>
+  <div
+    class="record"
+  >
+    <div
+      class="record-img-container"
+    >
+      <img
+        alt="image"
+        class="record-img"
+        src="https://i.scdn.co/image/ab67616d0000b27386a8ab515de4b7aef28cd631"
+      />
+    </div>
+    <div
+      class="record-info"
+    >
+      <div>
+        <div
+          class="record-name"
+        >
+          Beautiful Mistakes (feat. Megan Thee Stallion)
+        </div>
+        <div
+          class="record-artist"
+        >
+          Maroon 5
+        </div>
+      </div>
+      <button
+        class="icon-button"
+        style="background: url(heart-gray.svg) no-repeat center; background-size: contain; width: 3rem; height: 3rem; color: white;"
+      >
+        0
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
