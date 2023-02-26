@@ -1,0 +1,53 @@
+.sync-screen {
+  flex: 1;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+}
+
+.sync-screen > p {
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+.container {
+  flex: 1;
+  padding: 2rem 3rem;
+  margin: 0 max(10vw, 2rem);
+  word-wrap: normal;
+  background-color: var(--light-gray-bg);
+}
+
+.container-bar {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-heading {
+  font-size: 3.5rem;
+}
+
+.records {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 460px) {
+  .sync-screen > p {
+    font-size: 1.5rem;
+  }
+
+  .container-heading {
+    font-size: 3rem;
+  }
+
+  .container {
+    margin: 0;
+    padding: 1rem;
+  }
+}
