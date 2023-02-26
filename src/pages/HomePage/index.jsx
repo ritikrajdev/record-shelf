@@ -98,7 +98,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className='container'>
+    <div className='container' data-testid='container'>
       <div className='container-bar'>
         <h2 className='container-heading'>all songs</h2>
         <IconButton

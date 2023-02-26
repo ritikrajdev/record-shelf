@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage renders 1`] = `
+<DocumentFragment>
+  <div
+    class="sync-screen"
+  >
+    <p>
+      :((
+    </p>
+    <p>
+      seems a bit empty here ...
+    </p>
+    <button
+      class="rounded-button"
+    >
+      Sync
+    </button>
+  </div>
+</DocumentFragment>
+`;
