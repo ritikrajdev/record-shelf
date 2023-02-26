@@ -6,12 +6,15 @@ exports[`GenereIcon should render correctly 1`] = `
     class="genre-icon"
   >
     <img
+      alt="pop"
       src="genre-pop.png"
     />
     <div>
       <button
         class="rounded-button"
-      />
+      >
+        pop
+      </button>
     </div>
   </div>
 </DocumentFragment>

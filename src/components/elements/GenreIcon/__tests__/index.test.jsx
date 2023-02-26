@@ -4,7 +4,7 @@ import GenreIcon from '..';
 
 describe('GenereIcon', () => {
   it('should render correctly', () => {
-    const screen = render(<GenreIcon />);
+    const screen = render(<GenreIcon genre={'pop'} />);
     expect(screen.asFragment()).toMatchSnapshot();
   });
 });
