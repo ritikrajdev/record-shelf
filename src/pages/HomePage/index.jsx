@@ -52,6 +52,14 @@ export default function HomePage() {
     });
   }
 
+  const toggleLike = (recordId) => {
+    const recordIndex = records.findIndex((record) => record.id === recordId);
+
+    records[recordIndex].isLiked = !records[recordIndex].isLiked;
+    records[recordIndex].numLikes += records[recordIndex].isLiked ? 1 : -1;
+    setRecords([...records]);
+  };
+
   return (
     <div className='container'>
       <div className='container-bar'>
@@ -72,7 +80,11 @@ export default function HomePage() {
               <br />
               <div className='records'>
                 {genreRecords.map((record) => (
-                  <Record key={record.id} recordData={record} />
+                  <Record
+                    key={record.id}
+                    recordData={record}
+                    onLikeClick={() => toggleLike(record.id)}
+                  />
                 ))}
               </div>
               <br />
@@ -83,7 +95,11 @@ export default function HomePage() {
       ) : (
         <div className='records'>
           {records.map((record) => (
-            <Record key={record.id} recordData={record} />
+            <Record
+              key={record.id}
+              recordData={record}
+              onLikeClick={() => toggleLike(record.id)}
+            />
           ))}
         </div>
       )}
