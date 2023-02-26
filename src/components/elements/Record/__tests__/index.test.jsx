@@ -7,14 +7,18 @@ describe('Record', () => {
   it('should render correctly with gray heart when not liked', () => {
     const screen = render(<Record recordData={mockRecordsData[0]} />);
     expect(screen.asFragment()).toMatchSnapshot();
-    expect(screen.getByRole('button').style.background).toContain('heart-gray');
+    expect(screen.getByRole('button').style.backgroundImage).toContain(
+      'heart-gray'
+    );
   });
 
   it('should render red heart when liked', () => {
     const screen = render(
       <Record recordData={{ ...mockRecordsData[1], isLiked: true }} />
     );
-    expect(screen.getByRole('button').style.background).toContain('heart-red');
+    expect(screen.getByRole('button').style.backgroundImage).toContain(
+      'heart-red'
+    );
   });
 
   it('should call onClick when like button is clicked', () => {

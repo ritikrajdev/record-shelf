@@ -31,7 +31,7 @@ exports[`Record should render correctly with gray heart when not liked 1`] = `
       </div>
       <button
         class="icon-button"
-        style="background: url(heart-gray.svg) no-repeat center; background-size: contain; width: 3rem; height: 3rem; color: white;"
+        style="background-color: transparent; background-image: url(heart-gray.svg); background-repeat: no-repeat; background-position: center; background-size: contain; width: 3rem; height: 3rem; color: white;"
       >
         0
       </button>

@@ -16,7 +16,10 @@ export default function IconButton({
       className='icon-button'
       onClick={onClick}
       style={{
-        background: `url(${iconSrc}) no-repeat center center`,
+        backgroundColor: 'transparent',
+        backgroundImage: `url(${iconSrc})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
         backgroundSize: 'contain',
         width,
         height,

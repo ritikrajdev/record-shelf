@@ -7,14 +7,14 @@ Object {
     <div>
       <button
         class="icon-button"
-        style="background: url(test) no-repeat center; background-size: contain; width: 24px; height: 24px;"
+        style="background-color: transparent; background-image: url(test); background-repeat: no-repeat; background-position: center; background-size: contain; width: 24px; height: 24px;"
       />
     </div>
   </body>,
   "container": <div>
     <button
       class="icon-button"
-      style="background: url(test) no-repeat center; background-size: contain; width: 24px; height: 24px;"
+      style="background-color: transparent; background-image: url(test); background-repeat: no-repeat; background-position: center; background-size: contain; width: 24px; height: 24px;"
     />
   </div>,
   "debug": [Function],
