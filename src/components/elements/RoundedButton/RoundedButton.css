@@ -1,0 +1,13 @@
+.rounded-button {
+  outline: none;
+  border: none;
+  padding: 1rem 3rem;
+  background-color: var(--light-purple);
+  color: var(--text-color-secondary);
+
+  font-weight: bold;
+  font-size: 1.5rem;
+
+  width: 250px;
+  border-radius: 1.75rem;
+}

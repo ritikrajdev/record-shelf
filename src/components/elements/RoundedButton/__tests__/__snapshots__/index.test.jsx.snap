@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RoundedButton should render correctly 1`] = `
+<DocumentFragment>
+  <button
+    class="rounded-button"
+  >
+    Click me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`RoundedButton should render correctly with no input 1`] = `
+<DocumentFragment>
+  <button
+    class="rounded-button"
+  />
+</DocumentFragment>
+`;
+
+exports[`RoundedButton should render correctly with style 1`] = `
+<DocumentFragment>
+  <button
+    class="rounded-button"
+    style="background-color: red;"
+  >
+    Click me
+  </button>
+</DocumentFragment>
+`;
