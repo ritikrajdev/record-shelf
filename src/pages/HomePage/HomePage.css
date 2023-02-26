@@ -24,6 +24,7 @@
   margin-bottom: 2rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .container-heading {
@@ -32,7 +33,7 @@
 
 .records {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
 }

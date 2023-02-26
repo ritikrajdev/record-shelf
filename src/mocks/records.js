@@ -2,7 +2,7 @@ export const mockRecordsData = [
   {
     id: '0e2ddccf-f494-4c41-a499-90f8267f491a',
     name: 'Beautiful Mistakes (feat. Megan Thee Stallion)',
-    genre: 'Pop',
+    genre: 'Bollywood',
     artist: 'Maroon 5',
     imageUrl:
       'https://i.scdn.co/image/ab67616d0000b27386a8ab515de4b7aef28cd631',
