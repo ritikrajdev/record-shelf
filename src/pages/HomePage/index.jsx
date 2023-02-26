@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import IconButton from '../../components/elements/IconButton';
 import RoundedButton from '../../components/elements/RoundedButton';
-import { mockRecordsData } from '../../mocks/records';
 
 import iconGenre from '../../assets/icons/icon-genre.svg';
 import iconGrid from '../../assets/icons/icon-grid.svg';
 
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import GenreIcon from '../../components/elements/GenreIcon';
 import Record from '../../components/elements/Record';
 
+import {
+  GET_ALL_RECORDS,
+  GET_LIKES,
+  UPDATE_LIKES,
+} from '../../constants/apiEndPoints';
+import { makeRequest } from '../../utils/makeRequest';
 import './HomePage.css';
 
 export default function HomePage() {
@@ -20,8 +25,27 @@ export default function HomePage() {
   );
   const [records, setRecords] = useState(null);
 
+  const navigate = useNavigate();
+
   const fetchAndUpdateRecords = async () => {
-    setRecords(mockRecordsData);
+    const recordsDataWithoutLikes = (
+      await makeRequest(GET_ALL_RECORDS, {}, navigate)
+    ).data;
+    const likesResponseData = await Promise.all(
+      recordsDataWithoutLikes.map((record) =>
+        makeRequest(GET_LIKES(record.id), {}, navigate)
+      )
+    );
+    const likesData = likesResponseData.map((resData) => resData.data);
+    const recordsData = recordsDataWithoutLikes.map((record, idx) => ({
+      ...record,
+      genre: record.genre.name,
+      artist: record.artist.name,
+      isLiked: likesData[idx].like,
+      numLikes: likesData[idx].count,
+    }));
+    console.log(recordsData);
+    setRecords(recordsData);
   };
 
   const toggleGroupBy = () => {
@@ -52,12 +76,25 @@ export default function HomePage() {
     });
   }
 
-  const toggleLike = (recordId) => {
+  const toggleLike = async (recordId) => {
     const recordIndex = records.findIndex((record) => record.id === recordId);
 
-    records[recordIndex].isLiked = !records[recordIndex].isLiked;
-    records[recordIndex].numLikes += records[recordIndex].isLiked ? 1 : -1;
-    setRecords([...records]);
+    const isLiked = records[recordIndex].isLiked;
+    try {
+      const likedData = (
+        await makeRequest(
+          UPDATE_LIKES(recordId, {
+            like: !isLiked,
+          })
+        )
+      ).data;
+
+      records[recordIndex].isLiked = likedData.like;
+      records[recordIndex].numLikes = likedData.count;
+      setRecords([...records]);
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   return (

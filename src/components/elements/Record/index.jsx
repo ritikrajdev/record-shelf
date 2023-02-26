@@ -40,7 +40,6 @@ Record.propTypes = {
     genre: PropTypes.string.isRequired,
     artist: PropTypes.string.isRequired,
     imageUrl: PropTypes.string.isRequired,
-    publishedAt: PropTypes.string.isRequired,
     numLikes: PropTypes.number.isRequired,
     isLiked: PropTypes.bool.isRequired,
   }),
