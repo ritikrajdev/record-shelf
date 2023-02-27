@@ -18,6 +18,24 @@ describe('makeRequest', () => {
     expect(result).toEqual('some data');
   });
 
+  it('should give priority to apiEndpoint', async () => {
+    axios.mockResolvedValue({
+      data: 'some data',
+    });
+
+    const apiEndpoint = { x: 1 };
+    const dynamicConfig = { x: 2 };
+    const navigate = jest.fn();
+
+    await makeRequest(apiEndpoint, dynamicConfig, navigate);
+    expect(axios).toHaveBeenCalledWith({
+      x: 1,
+      headers: {
+        Authorization: 'Bearer QWlzaHdhcnlhIE4=',
+      },
+    });
+  });
+
   it('should call navigate on error', async () => {
     axios.mockRejectedValue(new Error('some error'));
 

@@ -44,7 +44,6 @@ export default function HomePage() {
       isLiked: likesData[idx].like,
       numLikes: likesData[idx].count,
     }));
-    console.log(recordsData);
     setRecords(recordsData);
   };
 
@@ -93,14 +92,16 @@ export default function HomePage() {
       records[recordIndex].numLikes = likedData.count;
       setRecords([...records]);
     } catch (e) {
-      console.error(e);
+      //
     }
   };
 
   return (
     <div className='container' data-testid='container'>
       <div className='container-bar'>
-        <h2 className='container-heading'>all songs</h2>
+        <h2 className='container-heading'>
+          {groupByGenre ? 'genre' : 'all songs'}
+        </h2>
         <IconButton
           onClick={toggleGroupBy}
           iconSrc={groupByGenre ? iconGrid : iconGenre}
@@ -130,7 +131,7 @@ export default function HomePage() {
           );
         })
       ) : (
-        <div className='records'>
+        <div className='records' data-testid='records'>
           {records.map((record) => (
             <Record
               key={record.id}

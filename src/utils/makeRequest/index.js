@@ -16,7 +16,6 @@ export async function makeRequest(
 
     return response.data;
   } catch (err) {
-    console.error(err);
     navigate('/error');
   }
 }
